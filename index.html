@@ -5,16 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+ 
 </head>
 <body>
     <div class="profile-box">
         <div class="profile-picture">
-            <img src="dp.jpeg">
+            <img src="dp.jpeg" alt="Profile Picture">
         </div>
-        <h2 class="profile-name">David Isumba</h2>
-        <p class="profile-role">Full Stack Developer</p>
-    </div>    
-    <!-- Other sections and content -->
+        <h2 class="profile-name">
+            David Isumba
+        </h2>
+        <p class="profile-role">
+            Software Engineer
+        </p>
+        <p class="profile-role">
+            Full Stack Developer
+        </p>
+    </div> 
+    <div class="info-box">
+        <div class="scroll-wrapper">
+            <section class="languages">
+                <div class="language" data-percentage="100">
+                    <div class="outer-circle">
+                        <div class="inner-circle">
+                            <span>100%</span>
+                        </div>
+                    </div>
+                    <p>English</p>
+                </div>
+                <div class="language" data-percentage="13">
+                    <div class="outer-circle">
+                        <div class="inner-circle">
+                            <span>13%</span>
+                        </div>
+                    </div>
+                    <p>Arabic</p>
+                </div>
+                <div class="language" data-percentage="10">
+                    <div class="outer-circle">
+                        <div class="inner-circle">
+                            <span>10%</span>
+                        </div>
+                    </div>
+                    <p>German</p>
+                </div>
+            </section>
+            <hr style="color:#9e9d98;">
+            <section class="skills">
+                <div class="skill">
+                    <div class="skill-name">
+                        Python
+                    </div>
+                    <div class="skill-percentage">95%</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 95%;"></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        C/C++
+                    </div>
+                    <div class="skill-percentage">90%</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%;"></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-name">
+                        Js
+                    </div>
+                    <div class="skill-percentage">70%</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div> 
+                <div class="skill">
+                    <div class="skill-name">
+                        C#
+                    </div>
+                    <div class="skill-percentage">80%</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%;"></div>
+                </div> 
+            </section>
+            <hr style="color:#9e9d98;">
+            <section class="technicals">
+                <ul class="technical-lists">
+                    <li class="tech">Bootstrap, Next.js, React, AngularJs</li>
+                    <li class="tech">Django, Express, Flask, NodeJs</li>
+                    <li class="tech">MySQL, Postgre, MongoDB</li>
+                    <li class="tech">Docker, Kubernetes, GIT</li>
+                    <li class="tech">ML, Data visualization, Architectures</li>
+                </ul>
+            </section>
+            <hr style="color:#9e9d98;">
+            <section class="save">
+                <div class="download-cv">
+                    <a href="cv.pdf" download>DOWNLOAD CV <span class="download-icon">⬇️</span></a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="social-media-box">
+        <a href="#" class="fa fa-linkedin"></a>
+        <a href="#" class="fa fa-github"></a>
+        <a href="#" class="fa fa-twitter"></a>
+    </div>
+    <div class="navbar" id="navbar">
+        <div class="nav-button">
+            <button class="nav-toggle" id="nav-toggle">
+                <span class="open-icon">&#9776;</span>
+                <span class="close-icon">&times;</span>
+            </button>
+        </div>
+        <div class="list-items">
+            <div class="nav-items" id="nav-items">
+                <a id="mv" href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#works">Works</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-body">
+        <div class="background">
+            <div class="foreground">
+                <div class="profile-obj">
+                    <h1>Discover my Amazing</h1>
+                    <h1>Code Space!</h1>
+                    <p class="banner-text">
+                        &lt;<code>code</code>&gt;
+                        I build 
+                        <span id="text"></span>
+                        <span class="console-underscore" id="console">|</span>
+                        &lt;/<code>code</code>&gt;
+                    </p>
+                    <a href="#works"><button class="explore-btn">EXPLORE NOW</button></a>
+                </div>
+                <img class="profile-img" src="prof2.png">
+            </div>
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
