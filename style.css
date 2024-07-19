@@ -597,6 +597,40 @@ code {
     margin: 0;
 }
 
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    margin-top: 4%;
+    color: #f5f5f5;
+}
+
+.contact-info h3 {
+    margin-top: 0;
+}
+
+.info-slides {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-slide {
+    background-color: #2c2c37;
+    margin-right: 3%;
+    width: 100%;
+    padding: 3%;
+    font-size: 12px;
+}
+
+.info-field {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.right {
+    color: #9e9d98;
+}
 
 .get-in {
     display: flex;
@@ -604,6 +638,7 @@ code {
     margin-left: 3%;
     margin-top: 4%;
     color: #f5f5f5;
+    margin-right: 3%;
 }
 
 .get-in h3 {
