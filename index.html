@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://kit.fontawesome.com/0bb9429756.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -230,14 +231,31 @@
             </div>
         </div>
         <!--CONTACT-->
-        <div class="touch" id="contactme">
-            <form id="getcontact">
-                <div class="contactname">
-                <label><i class='fas fa-user-alt' style='font-size:24px'></i></label>
-                <input type="text" id="name" placeholder="Name" required>
-                </div>
-            </form>
-
+        <div class="get-in">
+            <h3>Get in touch</h3>
+            <div class="touch" id="contactme">
+                <form class="get-contact" id="getcontact">
+                    <div class="contact-name">
+                        <div for="name" class="label" id="label">
+                            <label><i class="material-icons">person</i></label>
+                        </div>
+                        <input class="input" type="text" id="name" placeholder="Name">
+                    </div>
+                    <div class="contact-name">
+                        <div for="email" class="label" id="label">
+                            <label>@</label>
+                        </div>
+                        <input class="input" type="email" id="email" placeholder="Email" >
+                    </div>
+                    <div class="text-area">
+                        <div for="message" class="label" id="label">
+                            <label><i class="material-icons">mail_outline</i></label>
+                        </div>
+                        <textarea class="input" id="message" placeholder="Message" maxlength="1024"></textarea>
+                    </div>
+                    <button class="send" id="send" type="submit">SEND MESSAGE</button>
+                </form>
+            </div>
         </div>
         <!--FOOTER-->
         <div class="footer">
@@ -253,6 +271,12 @@
             </div>
         </div>
     
+    </div>
+    <div id="alertModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="alertMessage"></p>
+        </div>
     </div>
     
     <script src="script.js"></script>

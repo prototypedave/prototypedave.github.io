@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
     const numbers = document.querySelectorAll('.number');
-
     numbers.forEach((number, index) => {
         const target = +number.getAttribute('data-target');
         let count = 0;
@@ -38,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 number.innerText = target + (index === 0 ? ' +' : '');
             }
         }
-
         updateNumber();
     });
 });
@@ -56,6 +54,56 @@ document.getElementById('nav-toggle').addEventListener('click', function () {
         body.classList.add('navbar-expanded');
     }
 });
+
+
+document.querySelectorAll('.input').forEach(input => {
+    const label = input.previousElementSibling;
+
+    input.addEventListener('focus', function () {
+        label.classList.add('highlighted');
+    });
+
+    input.addEventListener('blur', function () {
+        label.classList.remove('highlighted');
+    });
+});
+
+document.getElementById('getcontact').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var name = document.getElementById('name').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+        showAlert('Please fill in all fields.');
+        return;
+    }
+
+    var mailtoLink = `mailto:example@example.com?subject=${email}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0AMessage: ${message}`;
+
+    window.location.href = mailtoLink;
+});
+
+function showAlert(message) {
+    var modal = document.getElementById('alertModal');
+    var span = document.getElementsByClassName('close')[0];
+    document.getElementById('alertMessage').textContent = message;
+    modal.style.display = 'block';
+
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+}
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const words = document.querySelectorAll('.changing-words .word');
@@ -93,39 +141,38 @@ function consoleText(words, id, colors) {
   window.setInterval(function() {
 
     if (letterCount === 0 && waiting === false) {
-      waiting = true;
-      target.innerHTML = words[0].substring(0, letterCount)
-      window.setTimeout(function() {
-        var usedColor = colors.shift();
-        colors.push(usedColor);
-        var usedWord = words.shift();
-        words.push(usedWord);
-        x = 1;
-        target.setAttribute('style', 'color:' + colors[0])
-        letterCount += x;
-        waiting = false;
-      }, 1000)
+        waiting = true;
+        target.innerHTML = words[0].substring(0, letterCount)
+        window.setTimeout(function() {
+          var usedColor = colors.shift();
+          colors.push(usedColor);
+          var usedWord = words.shift();
+          words.push(usedWord);
+          x = 1;
+          target.setAttribute('style', 'color:' + colors[0])
+          letterCount += x;
+          waiting = false;
+        }, 1000)
     } else if (letterCount === words[0].length + 1 && waiting === false) {
-      waiting = true;
-      window.setTimeout(function() {
-        x = -1;
-        letterCount += x;
-        waiting = false;
-      }, 1000)
+        waiting = true;
+        window.setTimeout(function() {
+          x = -1;
+          letterCount += x;
+          waiting = false;
+        }, 1000)
     } else if (waiting === false) {
-      target.innerHTML = words[0].substring(0, letterCount)
-      letterCount += x;
+        target.innerHTML = words[0].substring(0, letterCount)
+        letterCount += x;
     }
   }, 120)
   window.setInterval(function() {
-    if (visible === true) {
-      con.className = 'text-underscore hidden'
-      visible = false;
+      if (visible === true) {
+          con.className = 'text-underscore hidden'
+          visible = false;
 
-    } else {
-      con.className = 'text-underscore'
-
-      visible = true;
-    }
-  }, 400)
+      } else {
+          con.className = 'text-underscore'
+          visible = true;
+      }
+    }, 400)
 }

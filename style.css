@@ -4,6 +4,7 @@ body {
     padding: 0;
     overflow-x: hidden;
     background-color: #191923;
+    border-width: 20px;
 }
 
 /* Profile Box */
@@ -596,6 +597,115 @@ code {
     margin: 0;
 }
 
+
+.get-in {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    margin-top: 4%;
+    color: #f5f5f5;
+}
+
+.get-in h3 {
+    margin-top: 0;
+}
+
+.touch {
+    height: 500px;
+    background-color: #2c2c37;
+    display: flex;
+    flex-direction: column;
+}
+
+.get-contact {
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+    width: 100%;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color: #9e9d98;
+}
+
+.contact-name {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4%;
+}
+
+.label {
+    position: relative;
+    background-color: #20202a;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+input {
+    height: 50px;
+}
+
+.input {
+    width: 88%;
+    box-sizing: border-box;
+    outline: none;
+    margin-right: 3%;
+    background-color: #24242e;
+    color: #84838d;
+    padding-left: 2%;
+    outline: none;
+    border: none;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.text-area {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4%;
+    height: 150px;
+}
+
+.text-area div {
+    height: 150px;
+    align-items: flex-start;
+}
+
+.text-area label {
+    margin-top: 25%;
+}
+
+textarea {
+    padding-top: 1.5%;
+}
+
+.highlighted {
+    background-color: #e6b800;
+}
+
+.send {
+    width: 200px;
+    height: 50px;
+    background-color: #e6b800;
+    outline: none;
+}
+
+.send:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.send:active {
+    background-color: #ffd700;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    cursor:cell;
+}
+
 .footer {
     position: relative;
     margin: 3%;
@@ -618,6 +728,44 @@ code {
 .footer-email {
     margin-right: 3%;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 
 @keyframes slideOut {
