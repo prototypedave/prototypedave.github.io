@@ -85,6 +85,20 @@ document.getElementById('getcontact').addEventListener('submit', function(event)
     window.location.href = mailtoLink;
 });
 
+const boxes = document.querySelectorAll('.conversation-box');
+const circles = document.querySelectorAll('.outer-oss');
+
+boxes.forEach((box, index) => {
+    box.addEventListener('mouseover', () => {
+        circles[index].classList.add('pulsated');
+    });
+
+    box.addEventListener('mouseout', () => {
+        circles[index].classList.remove('pulsated');
+    });
+});
+
+
 function showAlert(message) {
     var modal = document.getElementById('alertModal');
     var span = document.getElementsByClassName('close')[0];
