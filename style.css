@@ -597,6 +597,103 @@ code {
     margin: 0;
 }
 
+.projects {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+    margin-top: 4%;
+    margin-right: 3%;
+    color: #f5f5f5;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 13px;
+}
+
+.header a{
+    text-decoration: none;
+    margin: 0;
+    padding-top: 15px;
+    color: #9f9c9a;
+    font-weight: bolder;
+}
+
+.sub-template {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sub-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.template {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.template img {
+    display: block;
+    width: 285px;
+    height: 285px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.template img:hover {
+    transform: scale(1.1);
+}
+
+.temp-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #2f2e37;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    height: 75%;
+    pointer-events: none;
+}
+
+.template:hover .temp-info {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.temp-info h3 {
+    font-size: 14px;
+    font-weight: bolder;
+    margin-top: 50px;
+}
+
+.temp-info p {
+    font-size: 13px;
+    color: #9f9c9a;
+}
+
+.temp-info a {
+    text-decoration: none;
+    font-family: monospace;
+    color: #e6b800;
+}
+
+
+
+
 .timeline {
     display: flex;
     flex-direction: row;

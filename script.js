@@ -98,7 +98,6 @@ boxes.forEach((box, index) => {
     });
 });
 
-
 function showAlert(message) {
     var modal = document.getElementById('alertModal');
     var span = document.getElementsByClassName('close')[0];
