@@ -1,3 +1,60 @@
+let currentIndex = 0;
+
+function moveSlide(direction) {
+    const images = document.querySelectorAll('.carousel-images img');
+    const totalImages = images.length;
+
+    // Determine how many slides can fit (2 images at a time in this case)
+    const imagesPerSlide = 2;
+
+    // Update the current index
+    currentIndex += direction;
+
+    // Ensure index loops correctly
+    if (currentIndex < 0) {
+        currentIndex = 0; // Stay at the first slide
+    } else if (currentIndex >= totalImages - imagesPerSlide + 1) {
+        currentIndex = totalImages - imagesPerSlide; // Stay at the last possible slide
+    }
+
+    // Move the carousel
+    const containerWidth = document.querySelector('.carousel-container').clientWidth;
+    const offset = -(currentIndex * (containerWidth / imagesPerSlide)); // Calculate the total offset
+    document.querySelector('.carousel-images').style.transform = `translateX(${offset}px)`;
+
+    // Update button states
+    updateButtonStates(totalImages, imagesPerSlide);
+}
+
+function updateButtonStates(totalImages, imagesPerSlide) {
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    // Disable the previous button if at the start
+    if (currentIndex === 0) {
+        prevButton.style.pointerEvents = 'none';
+        prevButton.style.color = 'gray'; // Optional: Change color to indicate disabled
+    } else {
+        prevButton.style.pointerEvents = 'auto';
+        prevButton.style.color = 'white'; // Reset color
+    }
+
+    // Disable the next button if at the end
+    if (currentIndex >= totalImages - imagesPerSlide) {
+        nextButton.style.pointerEvents = 'none';
+        nextButton.style.color = 'gray'; // Optional: Change color to indicate disabled
+    } else {
+        nextButton.style.pointerEvents = 'auto';
+        nextButton.style.color = 'white'; // Reset color
+    }
+}
+
+// Initial call to set button states
+updateButtonStates(document.querySelectorAll('.carousel-images img').length, 2);
+
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     const languages = document.querySelectorAll('.language');
     
@@ -115,8 +172,15 @@ function showAlert(message) {
     }
 }
 
+function showContent(contentId) {
+    const sections = document.querySelectorAll('.main-body');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
 
-
+    const activeSection = document.getElementById(contentId);
+    activeSection.classList.add('active');
+}
 
 document.addEventListener('DOMContentLoaded', function() {
     const words = document.querySelectorAll('.changing-words .word');

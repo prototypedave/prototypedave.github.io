@@ -378,8 +378,98 @@ body {
     margin-right: calc(5% + 20px);
     transition: margin 0.5s ease;
     overflow: hidden;     
-    margin-top: 20px;     
+    margin-top: 20px; 
+    display: none;   
 }
+
+.active {
+    display: block;
+}
+
+.sect {
+    margin: 24px;
+}
+
+.p-head {
+    display: flex;              
+    justify-content: space-between; 
+    align-items: center;          
+    padding: 10px;                   
+}
+
+.p-head h1 {
+    margin: 0;
+    color: #fff;
+    font-weight: bold;
+    font-family:serif;
+    font-size: 35px;
+}
+
+.p-head div {
+    font-size: 1rem;
+    color: #9f9c9a;
+    background-color: #1e1e28;
+    padding: 6px;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.carousel-container {
+    display: flex;  
+    overflow: hidden;           
+    height: 100%;              
+    background-color: #1e1e28;
+    z-index: 1;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.7s ease-in-out; 
+    gap: 20px;          
+}
+
+.carousel-images img {
+    width: calc(50% - 10px);  
+    height: 100%;             
+    object-fit: cover;        
+}
+
+.p-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;   
+    color: white;  
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.p-button a {
+    text-decoration: none;
+    color: white;
+    opacity: 1; /* Default opacity */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.p-button a[style*="pointer-events: none"] {
+    opacity: 0.5; /* Change opacity when disabled */
+}
+
+
+.prev {
+    margin-right: 5px;
+}
+
+.next {
+    margin-left: 5px;
+}
+
+.p-button:focus {
+    outline: none;
+}
+
 
 .background {
     position: relative;
@@ -1111,6 +1201,113 @@ textarea {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+.p-background {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    background-color: #1e1e28;
+    overflow: hidden;
+    margin: 3%;
+}
+
+.p-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("back4.jpg") center/cover no-repeat;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.p-contact {
+    text-align: center;          
+    padding: 60px;               
+    color: white;                
+}
+
+.p-nav {
+    position: relative;
+    margin: 3%;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    color: #84838d;
+    font-size: 16px;
+}
+
+.p-nav a {
+    flex: 1; 
+    text-align: center; 
+    text-decoration: none;
+    color: #9f9c9a;
+    margin-top: 20px;
+    margin-left: 280px;
+}
+
+.p-nav a:last-child {
+    text-align: right; 
+    color:goldenrod;
+}
+
+.column {
+    flex: 1;                    
+    margin: 0;       
+}
+
+.flex {
+    display: flex;
+    gap: 20px;
+}
+
+.flex-b {
+    display: flex;                   
+    justify-content: space-between;  
+    align-items: center;
+}
+
+.ml {
+    margin: 24px;
+}
+
+.text-m {
+    font-size: 14px;
+}
+
+.text-gray {
+    color: #9f9c9a;   
+}
+
+.text-white {
+    color: white;
+}
+
+.p {
+    padding: 4%;
+}
+.text-family {
+    font-family:"Courier New", Courier, monospace;
+}
+
+.bg-gray {
+    background-color: #2c2c38;  
+}
+.mt-2 {
+    margin-top: 20px;
+}
+
+.m {
+    margin: 3%;
+}
+
+.mr-2 {
+    margin-right: 20px; 
 }
 
 @keyframes pulse {

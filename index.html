@@ -131,7 +131,7 @@
             </div>
         </div>
     </div>
-    <div class="main-body">
+    <div id="main-b" class="main-body active">
         <div class="background">
             <div class="foreground">
                 <div class="profile-obj">
@@ -243,11 +243,11 @@
             <div class="sub-template">
                 <div class="sub-row">
                     <div class="template" id="web">
-                        <a href="portfolio.png"><img src="portfolio.png" alt="Image"></a>
+                        <a href="dpl_front.png"><img src="dpl_front.png" alt="Image"></a>
                         <div class="temp-info">
-                            <h3>Responsive Website</h3>
-                            <p> Static Website build from scratch using purely html, css and JavaScript</p>
-                            <a href="portfolio.html">READ MORE &gt;</a>
+                            <h3>Deep Learning Model</h3>
+                            <p> A deep learning model that predicts building heights from sentinel images</p>
+                            <a href="#" onclick="showContent('projects-b')">READ MORE &gt;</a>
                         </div>
                     </div>
                     <div class="template" id="web">
@@ -592,13 +592,122 @@
         </div>
     
     </div>
+    <div id="projects-b" class="main-body">
+        <div class="background">
+            <div class="sect">
+                <div class="p-head">
+                    <h1>DPL App</h1>
+                    <div>
+                        machine learning
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-images">
+                    <img src="dpl_front.png" alt="Image 1">
+                    <img src="DPL-App.png" alt="Image 2">
+                    <img src="predicted_image.png" alt="Image 3">
+                </div>
+            </div>                     
+        </div>
+        <div class="p-button">
+            <a href="#" class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a href="#" class="carousel-button next" onclick="moveSlide(1)">&#10095;</a>
+        </div>
+        <h3 class="text-white m">Project Details </h3>
+        <div class="m flex">
+            <div class="column text-white bg-gray p">
+                <h4>Description</h4>
+                <p class="text-gray text-m"> 
+                    This project demonstrates the development of a machine learning application 
+                    that predicts building heights from Sentinel satellite images (Sentinel-1 and 
+                    Sentinel-2). By leveraging advanced deep learning techniques, the app provides 
+                    accurate height estimations, facilitating urban planning, construction, and 
+                    environmental monitoring. 
+                </p>
+                <p class="text-gray text-m">See code <a href="https://github.com/prototypedave/DPLModel">here</a></p>
+            </div>
+            <div class="column text-white bg-gray p">
+                <p class="text-white text-m flex-b">start date <span class="text-gray">05.01.2024</span></p>
+                <p class="text-white text-m flex-b">finish date <span class="text-gray">06.10.2024</span></p>
+                <p class="text-white text-m flex-b">statues <span class="text-gray">completed</span></p>
+                <p class="text-white text-m flex-b">location<span class="text-gray">Germany</span></p>
+            </div>
+        </div>
+
+        <h3 class="text-white m">Features</h3>
+        <div class="m flex">
+            <div class="column text-white bg-gray p">
+                <h4>Key Features</h4>
+                <ul class="text-m">
+                    <li class="text-white">Deep learning model: <span class="text-gray">customized U-net network with added regression for 
+                        continous orediction of building heights</span></li>
+                    <li class="text-white">Frontend Interface: <span class="text-gray text-m">a user friendly interface with ready pre processed images for Germany region</span></li>
+                    <li class="text-white">Backend Intergration: <span class="text-gray text-m">a robust backend that processes passed images and makes predictions for frontend</span></li>
+                </ul>
+            </div>
+            <div class="column text-white bg-gray p">
+                <h4>Technical stack</h4>
+                <p class="text-white text-m flex-b">Frontend: <span class="text-gray">next.js</span></p>
+                <p class="text-white text-m flex-b">Backend: <span class="text-gray">python, flask</span></p>
+                <p class="text-white text-m flex-b">Machine learning: <span class="text-gray">pytorch</span></p>
+                <p class="text-white text-m flex-b">Data processing: <span class="text-gray">rasterio, numpy</span></p>
+            </div>
+        </div>
+
+        <h3 class="text-white m">More details</h3>
+        <div class="m flex">
+            <div class="column text-white bg-gray p">
+                <h4>How it works</h4>
+                <p class="text-gray text-m">Client side contains different regions in Germany that can be selected from. Backend will process the selected region 
+                    by getting the already preprocessed image file and further preprocess it. The processed image is then passed to the 
+                    deep learning model for prediction and the predicted heights then send to frontend allowing the user to visualize and 
+                    interpret the results effectively
+                </p>
+            </div>
+            <div class="column text-white bg-gray p">
+                <h4>Use cases</h4>
+                <p class="text-gray text-m">Urban planning</p>
+                <p class="text-gray text-m">Disaster management</p>
+                <p class="text-gray text-m">Environmental Monitoring</p>
+            </div>
+        </div>
+
+        <!--Contact me-->
+        <div class="p-background">
+            <div class="p-contact">
+                <h1>Ready to order your project?</h1>
+                <p>Let's work together!</p>
+                <button class="send" id="send" type="submit">CONTACT ME</button>
+            </div>
+        </div>
+
+        <!--navigation-->
+        <div class="p-nav bg-gray text-family">
+            <a href="#" onclick="showContent('main-b')">ALL PROJECTS</a>
+            <a href="#" class="mr-2 goldenr">NEXT PROJECT<span>&#10095;</span></a>
+        </div>
+
+        <!--FOOTER-->
+        <div class="footer">
+            <div class="copy-footer">
+            &copy;
+            <span id="copyright">
+                <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+            </span>
+            All rights reserved.
+            </div>
+            <div class="footer-email">
+                Email:davidisumba@gmail.com
+            </div>
+        </div>
+    </div>
     <div id="alertModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <p id="alertMessage"></p>
         </div>
     </div>
-    
     <script src="script.js"></script>
 </body>
 </html>
