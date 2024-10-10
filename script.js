@@ -1,3 +1,141 @@
+let currIndex = {
+    carousel1: 0,
+    carousel2: 0
+};
+const intervalTime = 3000;
+
+const carousel1 = document.getElementById('carousel-1');
+const carousel2 = document.getElementById('carousel-2');
+
+// Function to update the displayed image for a specific carousel
+function showImage(index, carousel) {
+    const images = carousel.querySelectorAll('.carousel-images img');
+    const imagesCount = images.length;
+    // Wrap around if the index is out of bounds
+    if (index < 0) {
+        index = imagesCount - 1;
+    } else if (index >= imagesCount) {
+        index = 0;
+    }
+
+    // Move the carousel to show the selected image
+    const offset = -index * 100;
+    carousel.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+
+    // Update the correct index based on the carousel
+    if (carousel === carousel1) {
+        currIndex.carousel1 = index;
+    } else {
+        currIndex.carousel2 = index;
+    }
+}
+
+// Function to handle manual slide movement (left/right)
+function move(direction, carouselId) {
+    const carousel = document.getElementById(carouselId);
+    const indexKey = carouselId === 'carousel-1' ? 'carousel1' : 'carousel2';
+    showImage(currIndex[indexKey] + direction, carousel);
+}
+
+// Initialize the intervals to automatically move the carousels
+let interval1 = setInterval(() => {
+    showImage(currIndex.carousel1 + 1, carousel1);
+}, intervalTime);
+
+let interval2 = setInterval(() => {
+    showImage(currIndex.carousel2 + 1, carousel2);
+}, intervalTime);
+
+// Handle carousel button clicks (left/right)
+document.querySelectorAll('.carousel-button').forEach(button => {
+    button.addEventListener('click', () => {
+        // Clear both intervals when manually navigating
+        clearInterval(interval1);
+        clearInterval(interval2);
+
+        // Determine which carousel to move
+        const carouselId = button.getAttribute('data-carousel');
+        const direction = parseInt(button.getAttribute('data-direction'));
+        move(direction, carouselId);
+
+        // Restart the intervals for auto-sliding
+        interval1 = setInterval(() => {
+            showImage(currIndex.carousel1 + 1, carousel1);
+        }, intervalTime);
+
+        interval2 = setInterval(() => {
+            showImage(currIndex.carousel2 + 1, carousel2);
+        }, intervalTime);
+    });
+});
+
+// Initial display of the first images
+showImage(currIndex.carousel1, carousel1);
+showImage(currIndex.carousel2, carousel2);
+
+const boxes = document.querySelectorAll('.conversation-box');
+const circles = document.querySelectorAll('.outer-oss');
+
+const handleAnimation = (index, action) => {
+    if (action === 'add') {
+        circles[index].classList.add('pulsated');
+    } else {
+        circles[index].classList.remove('pulsated');
+    }
+};
+
+boxes.forEach((box, index) => {
+    box.addEventListener('mouseover', () => handleAnimation(index, 'add'));
+    box.addEventListener('mouseout', () => handleAnimation(index, 'remove'));
+});
+
+boxes.forEach((box, index) => {
+    box.addEventListener('touchstart', () => {
+        handleAnimation(index, 'add');
+    });
+
+    box.addEventListener('touchend', () => {
+        handleAnimation(index, 'remove');
+    });
+});
+
+const categoryContainer = document.getElementById('all-cat');
+categoryContainer.addEventListener('click', function(event) {
+    if (event.target.tagName === 'A') {
+        const currentActive = document.querySelector('.a-active');
+        if (currentActive) {
+            currentActive.classList.remove('a-active');
+        }
+        
+        event.target.classList.add('a-active');
+        const category = event.target.getAttribute('href').substring(1);
+
+        if (category === 'all-cat') {
+            showAllItems();
+        } else {
+            filterItemsByCategory(category);
+        }
+    }
+});
+
+function showAllItems() {
+    const items = document.querySelectorAll('.template');
+    items.forEach(item => {
+        item.style.display = 'block';
+    });
+}
+
+function filterItemsByCategory(category) {
+    const items = document.querySelectorAll('.template');
+    items.forEach(item => {
+        if (item.id.includes(category)) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const languages = document.querySelectorAll('.language');
     
@@ -7,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let currentPercentage = 0;
         const increment = 1;
-        const interval = 10; // milliseconds
+        const interval = 10; 
 
         const animateProgress = setInterval(() => {
             if (currentPercentage >= percentage) {
@@ -27,8 +165,7 @@ document.getElementById('nav-toggle').addEventListener('click', function () {
     var upnav = document.getElementsByClassName('upnav');
     var items = document.getElementsByClassName("list-items");
 
-    // Check if the screen size is for mobile
-    var isMobile = window.innerWidth < 768; // Adjust the threshold as needed
+    var isMobile = window.innerWidth < 768; 
 
     if (navbar.classList.contains('expanded')) {
         navbar.classList.remove('expanded');
@@ -68,9 +205,16 @@ document.getElementById('nav-toggle').addEventListener('click', function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const copyrightSpan = document.getElementById("copyright"); 
+    const currentYear = new Date().getFullYear();
+    copyrightSpan.textContent = currentYear;
+});
 
 document.addEventListener("DOMContentLoaded", function() {
     const numbers = document.querySelectorAll('.number');
+    const totalItems = numbers.length;
+
     numbers.forEach((number, index) => {
         const target = +number.getAttribute('data-target');
         let count = 0;
@@ -79,15 +223,16 @@ document.addEventListener("DOMContentLoaded", function() {
         function updateNumber() {
             count += increment;
             if (count < target) {
-                number.innerText = Math.ceil(count) + (index === 0 ? ' +' : '');
+                number.innerText = Math.ceil(count) + (index === 0 || index === totalItems - 1 ? ' +' : '');
                 requestAnimationFrame(updateNumber);
             } else {
-                number.innerText = target + (index === 0 ? ' +' : '');
+                number.innerText = target + (index === 0 || index === totalItems - 1 ? ' +' : '');
             }
         }
         updateNumber();
     });
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const words = document.querySelectorAll('.changing-words .word');
@@ -266,19 +411,6 @@ function sendMail(event) {
 
     document.getElementById('getcontact').reset();
 };
-
-const boxes = document.querySelectorAll('.conversation-box');
-const circles = document.querySelectorAll('.outer-oss');
-
-boxes.forEach((box, index) => {
-    box.addEventListener('mouseover', () => {
-        circles[index].classList.add('pulsated');
-    });
-
-    box.addEventListener('mouseout', () => {
-        circles[index].classList.remove('pulsated');
-    });
-});
 
 function showAlert(message) {
     var modal = document.getElementById('alertModal');

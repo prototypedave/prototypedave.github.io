@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    margin-bottom: 7%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -387,6 +388,7 @@ body {
     margin-top: 20px; 
     display: none;   
 }
+
 
 .active {
     display: block;
@@ -1086,7 +1088,6 @@ textarea {
     animation: pulse 1.5s infinite;
 }
 
-
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -1110,6 +1111,10 @@ textarea {
 }
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        margin-bottom: 3%;
+    }
+
     .upnav {
         position: fixed;
         top: 0;
@@ -1303,20 +1308,342 @@ textarea {
         flex-direction: column;
     }
 
-    .box {
-        width: 100%;
-        gap: 20px;
-    }
-
     .mb-square {
         height: auto;
     }
 
-    .mb-proj {
-        flex-direction: column;
-    }
-
-    .hidden {
+    .hide {
         display: none;
     }
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        margin: 3%;
+        padding: 7%;
+    }
+
+    .footer span {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .footer div {
+        display: inline;
+        line-height: 20px;
+    }
+
+    .f-last {
+        text-align: right;
+        overflow-wrap: break-word;
+        width: 50%;
+    }
+
+    .send {
+        background-color:#FFC000;
+        font-size: 14px;
+        font-weight:400;
+        color: #000;
+        margin-top: 5%;
+        margin-bottom: 15%;
+        width: fit-content;
+        padding: 3% 10% 3% 10%;
+        height: fit-content;
+    }
+
+    form {
+        height: auto;
+        margin-bottom: 10%;
+    }
+
+    .input {
+        width: 88%;
+    }
+
+    .touch {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 7% 3%;
+        height: auto;
+    }
+
+    .touch h3 {
+        padding: 3%;
+    }
+
+    .touch-div {
+        padding: 10% 10% 0% 10%;
+        justify-content: space-between;
+        height: auto;
+    }
+
+    .text-area {
+        flex-grow: 1;
+    }
+
+    textarea.input {
+        width: 100%;  
+        height: auto; 
+        flex-grow: 1; 
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 3%;
+        height: auto;
+        width: 100%;
+        padding: 10%;
+    }
+
+    .contact-div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: auto;
+        height: auto;
+    }
+
+    .contact-pad {
+        margin: 0%;
+        width: auto;
+        height: auto;
+        padding: 10%;
+    }
+
+    .edu-div {
+        display: flex;
+        flex-direction: row;
+        margin-left: 10%;
+        margin-right: 10%;
+        gap: 0;
+    }
+
+    .edu-pad {
+        margin: 0%;
+        height: auto;
+        text-align: left;
+        flex: 1;
+        width: 80%;
+    }
+
+    .edu-col {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .edu-dec {
+        gap: 0;
+    }
+
+    .decoration {
+        flex: 1; 
+    }
+
+    .project-div {
+        flex-wrap: wrap; 
+        justify-content: center; 
+        align-items: center; 
+        gap: 10px; 
+        width: 100%;
+        margin-bottom: 5%; 
+    }
+
+    .project-div .a-active {
+        color: white;
+    }
+
+    .proj-col {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .proj-div {
+        position: relative;
+        width: 100%; 
+    }
+    
+    .proj-div img {
+        width: 100%;
+        height: auto; 
+    }
+    
+    .proj-div::before {
+        content: '';
+        display: block;
+        padding-top: 100%; 
+    }
+    
+    .proj-div img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+    }
+
+    .proj-info {
+        height: auto;
+        padding: 10%;
+        text-align: left;
+        gap: 10px;
+    }
+
+    .proj-info h3 {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .service-pad {
+        text-align: left;
+        padding: 5%;
+    }
+
+    .accomplish {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 3%;
+    }
+
+    .xp {
+        flex: 0 0 27%; 
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .num {
+        flex: 0 0 12%;
+        margin-bottom: 20px;
+    }
+    
+    .port-sect {
+        display: flex;
+        flex-direction: row;
+        margin: 3%;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        height: auto;
+        gap: 0;
+    }
+
+    .port-none {
+        display: none;
+    }
+
+    .port-sect span {
+        font-size: 12px;
+        margin-right: 0.5em;
+        margin-left: 0.5em;   
+        padding: 5%;
+    }
+
+    .port-sect a {
+        white-space: nowrap;
+        font-size: 12px;
+        font-weight: bold;
+    }
+
+    .port-sect a:first-child {
+        margin-right: auto;
+        width: 60%; 
+    }
+    .port-sect a:last-child {
+        margin-left: auto; 
+        margin-bottom: 5%;
+    }
+
+    .no-other {
+        margin-bottom: 5%;
+    }
+
+    .port-contact h1 {
+        font-size: 46px;
+        font-weight:900;
+        font-family:'Times New Roman', Times, serif;
+    }
+
+    .no-gap {
+        height: auto;
+        padding: 10%;
+        text-align: left;
+        gap: 0;
+    }
+
+    .carasel {
+        position: relative;
+        overflow: hidden; 
+        width: 100%; 
+        height: 150px; 
+        gap: 0;
+        margin-bottom: 3%;
+    }
+    
+    .carousel-images {
+        display: flex;
+        transition: transform 0.5s ease; 
+        width: 100%; 
+        gap: 0;
+    }
+    
+    .carousel-images img {
+        width: 100%; 
+        height: auto; 
+        object-fit: cover;
+        flex-shrink: 0; 
+        margin: 0; 
+        padding: 0;  
+    }
+
+    .car-button {
+        display: none;
+    }
+
+    .proj-title {
+        display: flex;
+        flex-direction: column;
+        top: 60;
+        margin: 3%;
+        gap: 7px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .proj-title h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .proj-title div {
+        font-size: 12px;
+    }
+
+    .proj {
+        margin: 3%;
+    }
+
+    .proj-back {
+        margin-bottom: 5%;
+        padding-top: 20%;
+        height: auto;
+    }
+
+    .proj-back::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("back4.jpg") center/cover no-repeat;
+        opacity: 0.1;
+        z-index: 1;
+    }
+    
 }
