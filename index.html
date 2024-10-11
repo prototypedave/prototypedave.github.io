@@ -133,14 +133,14 @@
             <div class="nav-items" id="nav-items">
                 <a id="mv" href="#home">Home</a>
                 <a href="#services">Services</a>
-                <a href="#works">Works</a>
+                <a href="#works">Projects</a>
                 <a href="#resume">Resume</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
     </div>
     <div id="main-b" class="main-body active">
-        <div class="p-background pos-r flex flex-col mt-0 bg-body-gray overflow h-2-3">
+        <div class="p-background pos-r flex flex-col mt-0 bg-body-gray overflow h-2-3" id="home">
             <div class="pos-r z-2 mt-c m-3 h-full bg-dark-gray flex flex-row overflow foreground">
                 <div class="pos-r flex flex-col z-1 obj">
                     <h1>Discover my Amazing</h1>
@@ -203,7 +203,7 @@
         </div>
 
         <!--Projects-->
-        <div class="pos-r flex flex-col m-3 text-white touch">
+        <div class="pos-r flex flex-col m-3 text-white touch" id="works">
             <h3> Projects</h3>
             <div class="header flex flex-row gap font-m project-div" id="all-cat">
                 <a class="a-active" href="#all-cat">ALL CATEGORIES</a>
@@ -213,8 +213,8 @@
                 <a href="#omnet">OMNeT++</a>
             </div>
 
-            <div class="flex flex-col gap proj-col">
-                <div class="flex flex-row gap proj-col">
+            <div class="flex flex-col gap proj-col proj-tab">
+                <div class="flex flex-row gap proj-col proj-grid">
                     <div class="template col proj-div" id="machine web all-cat">
                         <a href="dpl_front.png"><img src="dpl_front.png" alt="Image"></a>
                         <div class="temp-info bg-dark-gray flex flex-col proj-info">
@@ -238,13 +238,11 @@
         </div>
 
         <!--Education and work History-->
-        <div class="flex flex-row m-3 text-white w-full touch col-service">
-
+        <div class="flex flex-row m-3 text-white w-full touch col-service" id="resume">
             <!-- Education -->
             <div class="pos-r w-full flex flex-col ml-0">
                 <h3>Education</h3>
                 <div class="pos-r flex flex-row mr-7 edu-div">
-
                     <!-- edu history-->
                     <div class="pos-r flex flex-col w-full contact-div">
                         <div class="pos-r w-35 p-2 bg-dark-gray flex flex-col edu-pad box conversation-box">
@@ -284,7 +282,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- edu decoration -->
                     <div class="mr-0 flex flex-col contact-div edu-dec">
                         <div class="outer-oss pos-r overflow flex flex-col align-center justify-center" id="pulsed"><div class="inner-oss line-color"></div></div>
@@ -357,9 +354,9 @@
         </div>
 
         <!--Contact-->
-        <div class="flex flex-col m-3 text-white touch" id="contact">
+        <div class="flex flex-col m-3 text-white touch mh" id="contact">
             <h3 class="mt-0">Contact information</h3>
-            <div class="flex flex-row col contact-div">
+            <div class="flex flex-row col contact-div cont-grid">
                 <div class="info-slide font-base p-3 w-full mr-3 bg-dark-gray contact-pad">
                     <div class="flex flex-row space-between">
                         <p class="text-white">Country:</p>
@@ -402,7 +399,7 @@
         </div>
 
         <!--Get In Touch-->
-        <div class="flex flex-col m-3 text-white touch">
+        <div class="flex flex-col m-3 text-white touch mh">
             <h3 class="mt-0">Get in touch</h3>
             <div class="h-4-5 bg-dark-gray flex flex-col touch-div" id="contactme">
                 <form class="flex flex-col m-3 w-full font-base font-family-courier text-gray" id="getcontact" onsubmit="sendMail(event)">
@@ -428,7 +425,6 @@
             <div class="ml-3 w-75">&copy;<span id="copyright"></span>All rights reserved.</div>
             <div class="mr-3 f-last">Email:davidisumba@gmail.com</div>
         </div>
-    
     </div>
 
     <div id="projects-b" class="main-body overflow">
@@ -595,7 +591,7 @@
 
         <!--navigation-->
         <div class="bg-dark-gray text-family m-3 pos-r flex h-55 flex-row overflow text-gray font-l justify-between port-sect">
-            <a href="#" class="text-center no-decoration mt-2 ml-3 text-gold no-other"><span>&#10094;</span>PREVIOUS PROJECTS</a>
+            <a href="#" class="text-center no-decoration mt-2 ml-3 text-gold no-other" onclick="showContent('projects-b')"><span>&#10094;</span>PREVIOUS PROJECTS</a>
             <a href="#" class="text-center no-decoration text-gray mt-2 port-none" onclick="showContent('main-b')">ALL PROJECTS</a>
             <a href="#" class="text-center no-decoration mt-2 mr-3 text-gold disable port-none" onclick="showContent('hwa-a')">NEXT PROJECT<span>&#10095;</span></a>
         </div>
