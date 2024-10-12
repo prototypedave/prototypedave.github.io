@@ -252,6 +252,62 @@ body {
     margin-right:150px;
 }
 
+.pricey h5 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.pricey .price {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    font-size: 28px;
+    color: goldenrod;
+    font-weight: bolder;
+}
+
+.price span {
+    font-size: 12px;
+    padding-top: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    color: #84838d;
+}
+
+.pricey ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    list-style: none;
+    gap: 20px;
+}
+
+.pricey li {
+    text-align: center;
+    margin-right: 20%;
+    font-size: 14px;
+    color: #84838d;
+}
+
+.pricey a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 5px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.pricey p {
+    text-align: center;
+    margin-top: 4px;
+    padding-top: 0;
+    color: #84838d;
+    font-size: 12px;
+}
+
 .portfolio-box {
     opacity: 0.9;
     width: 100%;
@@ -400,7 +456,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("images/back4.jpg") center/cover no-repeat;
+    background: url("../images/back4.jpg") center/cover no-repeat;
     opacity: 0.5;
     z-index: 1;
 }
@@ -938,7 +994,7 @@ code {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("images/back4.jpg") center/cover no-repeat;
+    background: url("../images/back4.jpg") center/cover no-repeat;
     opacity: 0.2;
     z-index: 1;
 }
@@ -1647,7 +1703,7 @@ textarea {
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("images/back4.jpg") center/cover no-repeat;
+        background: url("../images/back4.jpg") center/cover no-repeat;
         opacity: 0.1;
         z-index: 1;
     }
@@ -1819,7 +1875,7 @@ textarea {
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("images/back4.jpg") center/cover no-repeat;
+        background: url("../images/back4.jpg") center/cover no-repeat;
         opacity: 0.1;
         z-index: 1;
     }
@@ -1856,7 +1912,7 @@ textarea {
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("images/back4.jpg") center/cover no-repeat;
+        background: url("../images/back4.jpg") center/cover no-repeat;
         opacity: 0.3;
         z-index: 1;
     }
@@ -2067,7 +2123,7 @@ textarea {
         left: 0;
         width: 100%;
         height: 100%;
-        background: url("images/back4.jpg") center/cover no-repeat;
+        background: url("../images/back4.jpg") center/cover no-repeat;
         opacity: 0.1;
         z-index: 1;
     }

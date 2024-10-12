@@ -2,8 +2,6 @@ window.addEventListener('load', checkScreenSize);
 window.addEventListener('resize', checkScreenSize);
 window.addEventListener('resize', checkScreenWidth);
 window.addEventListener('load', checkScreenWidth);
-window.addEventListener('resize', checkScreenWidthForHide);
-
 
 function mergeProjCols() {
     const firstProjCol = document.querySelectorAll('.proj-col')[0];
@@ -18,24 +16,28 @@ function mergeProjCols() {
 }
 
 function checkScreenSize() {
-    if (window.innerWidth <= 1024) {
+    if (window.innerWidth <= 1080) {
       mergeProjCols();
     }
 }
 
 function checkScreenWidth() {
     const divElements = document.querySelectorAll('div.none');
+    const socialMediaBoxes = document.querySelectorAll('.social-media-box');
+    const elements = document.querySelectorAll('.proj-col .w-full');
     if (window.innerWidth < 1080) {
         divElements.forEach(div => {
             div.classList.remove('none');
         });
+        elements.forEach(element => {
+            element.classList.remove('w-full');
+        });
+    } else {
+        elements.forEach(element => {
+            element.classList.add('w-full'); 
+        });
     }
-}
 
-checkScreenWidth();
-
-function checkScreenWidthForHide() {
-    const socialMediaBoxes = document.querySelectorAll('.social-media-box');
     if (window.innerWidth >= 768 && window.innerWidth <= 1080) {
         socialMediaBoxes.forEach(box => {
             if (box.classList.contains('hide')) {
@@ -45,7 +47,7 @@ function checkScreenWidthForHide() {
     }
 }
 
-checkScreenWidthForHide();
+checkScreenWidth();
 
 document.getElementById('nav-toggle').addEventListener('click', function () {
     var navbar = document.getElementById('navbar');
