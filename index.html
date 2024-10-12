@@ -11,16 +11,16 @@
 </head>
 <body>
     <nav class="upnav">
-        <div class="left-button">
+        <div class="left-button none">
             <button class="left-toggle" onclick="toggleBoxes()">
                 <span class="dots-icon">⋮</span>
             </button>
         </div>
     </nav>
     <div class="profile-box">
-        <div class="close-button" onclick="toggleBoxes()">✖</div>
+        <div class="close-button none" onclick="toggleBoxes()">✖</div>
         <div class="profile-picture">
-            <img src="dp1.jpeg" alt="Profile Picture">
+            <img src="images/dp1.jpeg" alt="Profile Picture">
         </div>
         <h2 class="profile-name">
             David Isumba
@@ -148,7 +148,7 @@
                     <p class="text-white font-l font-family-courier mt-5pc mb-5">&lt;<code>code</code>&gt;I build <span id="text"></span><span class="console-underscore" id="console">|</span>&lt;/<code>code</code>&gt;</p>
                     <a href="#projects-b"><button class="explore-btn" onclick="showContent('projects-b')">EXPLORE NOW</button></a>
                 </div>
-                <img class="pos-r z-3" src="prof2.png">
+                <img class="pos-r z-3" src="images/prof2.png">
             </div>
         </div>
 
@@ -205,7 +205,7 @@
         <!--Projects-->
         <div class="pos-r flex flex-col m-3 text-white touch" id="works">
             <h3> Projects</h3>
-            <div class="header flex flex-row gap font-m project-div" id="all-cat">
+            <div class="header flex flex-row gap font-m project-div mb-3" id="all-cat">
                 <a class="a-active" href="#all-cat">ALL CATEGORIES</a>
                 <a href="#web">WEB DEVELOPMENT</a>
                 <a href="#net">NETWORK PROTOCOLS</a>
@@ -216,7 +216,7 @@
             <div class="flex flex-col gap proj-col proj-tab">
                 <div class="flex flex-row gap proj-col proj-grid">
                     <div class="template col proj-div" id="machine web all-cat">
-                        <a href="dpl_front.png"><img src="dpl_front.png" alt="Image"></a>
+                        <a href="images/dpl_front.png"><img src="images/dpl_front.png" alt="Image"></a>
                         <div class="temp-info bg-dark-gray flex flex-col proj-info">
                             <h3 class="font-m font-bold mt-5">Deep Learning Model</h3>
                             <p class="font-base text-gray"> A deep learning model that predicts building heights from sentinel images. nextjs, flask, python..</p>
@@ -224,15 +224,15 @@
                         </div>
                     </div>
                     <div class="template proj-div" id="web all-cat">
-                        <a href="hwahome.jpeg"><img src="hwahome.jpeg" alt="hybrid website analyzer app"></a>
+                        <a href="images/hwahome.jpeg"><img src="images/hwahome.jpeg" alt="hybrid website analyzer app"></a>
                         <div class="temp-info bg-dark-gray flex flex-col proj-info">
                             <h3 class="font-m font-bold mt-5">Hybrid Website Analyzer</h3>
                             <p class="font-base text-gray"> Real time updates Website build using React, nodejs, expressjs and MongoDB</p>
                             <a class="no-decoration text-gold" href="#" onclick="showContent('hwa-a')">READ MORE &gt;</a>
                         </div>
                     </div>
-                    <div class="template col hide" id="net all-cat"> Stay tuned! More projects will be added soon</div>
-                    <div class="template hide" id="omnet all-cat"> Stay tuned! More projects will be added soon</div>
+                    <div class="none template col hide" id="net all-cat"> Stay tuned! More projects will be added soon</div>
+                    <div class="none template hide none" id="omnet all-cat"> Stay tuned! More projects will be added soon</div>
                 </div>
             </div>
         </div>
@@ -260,7 +260,7 @@
                             </div>
                             <div class="font-m font-thin font-family-courier text-gray p-l-r"><em>Student</em></div>
                             <div class="p-l-r font-m font-thin font-family-courier text-gray mt-3">Coursework - low-level programming, higher level programming, system engineering, backend and frontend</div>
-                            <div class="mt-3 p-l-r no-outline"><a class="no-decoration text-gold" href="alx.png">CERTIFICATE &gt;</a></div>
+                            <div class="mt-3 p-l-r no-outline"><a class="no-decoration text-gold" href="images/alx.png">CERTIFICATE &gt;</a></div>
                         </div>
                         <div class="pos-r w-35 p-2 bg-dark-gray flex flex-col edu-pad box conversation-box">
                             <div class="flex flex-row gap edu-col">
@@ -276,9 +276,9 @@
                             <div class="font-m font-thin font-family-courier text-gray p-l-r"><em>Student</em></div>
                             <div class="p-l-r font-m font-thin font-family-courier text-gray mt-3">Responsive Web Design, legacy JavaScript Algorithms and Data Structures</div>
                             <div class="mt-3 p-l-r no-outline">
-                                <a class="no-decoration text-gold" href="responsiveweb.pdf">WEB DESIGN &gt;</a>
+                                <a class="no-decoration text-gold" href="files/responsiveweb.pdf">WEB DESIGN &gt;</a>
                                 <br>
-                                <a class="no-decoration text-gold" href="DSA.pdf">JS ALGORITHM &gt;</a>
+                                <a class="no-decoration text-gold" href="files/DSA.pdf">JS ALGORITHM &gt;</a>
                             </div>
                         </div>
                     </div>
@@ -437,9 +437,9 @@
             </div>
             <div class="ml-3 mr-3 overflow h-full bg-opacity-gray z-1 justify-center align-center carasel" id="carousel-1">
                 <div class="carousel-images flex gap h-full">
-                    <img class="h-full" src="dpl_front.png" alt="Image 1">
-                    <img class="h-full" src="DPL-App.png" alt="Image 2">
-                    <img class="h-full" src="predicted_image.png" alt="Image 3">
+                    <img class="h-full" src="images/dpl_front.png" alt="Image 1">
+                    <img class="h-full" src="images/DPL-App.png" alt="Image 2">
+                    <img class="h-full" src="images/predicted_image.png" alt="Image 3">
                 </div>
             </div>                     
         </div>
@@ -535,8 +535,8 @@
             <div class="ml-3 mr-3 overflow h-full bg-opacity-gray z-1 justify-center align-center carasel" id="carousel-2">
                 <div class="carousel-images flex gap h-full">
                     <img class="h-full" src="hwahome.jpeg" alt="Home">
-                    <img class="h-full" src="hwadashboard.jpeg" alt="Dashboard">
-                    <img class="h-full" src="hwanetw.jpeg" alt="network">
+                    <img class="h-full" src="images/hwadashboard.jpeg" alt="Dashboard">
+                    <img class="h-full" src="images/hwanetw.jpeg" alt="network">
                 </div>
             </div>                      
         </div>

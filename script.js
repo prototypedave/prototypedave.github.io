@@ -19,6 +19,32 @@ function checkScreenSize() {
 window.addEventListener('load', checkScreenSize);
 window.addEventListener('resize', checkScreenSize);
 
+function checkScreenWidth() {
+    const divElements = document.querySelectorAll('div.none');
+    if (window.innerWidth < 1080) {
+        divElements.forEach(div => {
+            div.classList.remove('none');
+        });
+    }
+}
+window.addEventListener('resize', checkScreenWidth);
+window.addEventListener('load', checkScreenWidth);
+checkScreenWidth();
+
+function checkScreenWidthForHide() {
+    const socialMediaBoxes = document.querySelectorAll('.social-media-box');
+    if (window.innerWidth >= 768 && window.innerWidth <= 1080) {
+        socialMediaBoxes.forEach(box => {
+            if (box.classList.contains('hide')) {
+                box.classList.remove('hide');
+            }
+        });
+    }
+}
+
+window.addEventListener('resize', checkScreenWidthForHide);
+checkScreenWidthForHide();
+
 let currIndex = {
     carousel1: 0,
     carousel2: 0
