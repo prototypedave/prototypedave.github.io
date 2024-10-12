@@ -1,3 +1,10 @@
+window.addEventListener('load', checkScreenSize);
+window.addEventListener('resize', checkScreenSize);
+window.addEventListener('resize', checkScreenWidth);
+window.addEventListener('load', checkScreenWidth);
+window.addEventListener('resize', checkScreenWidthForHide);
+
+
 function mergeProjCols() {
     const firstProjCol = document.querySelectorAll('.proj-col')[0];
     const secondProjCol = document.querySelectorAll('.proj-col')[1];
@@ -16,9 +23,6 @@ function checkScreenSize() {
     }
 }
 
-window.addEventListener('load', checkScreenSize);
-window.addEventListener('resize', checkScreenSize);
-
 function checkScreenWidth() {
     const divElements = document.querySelectorAll('div.none');
     if (window.innerWidth < 1080) {
@@ -27,8 +31,7 @@ function checkScreenWidth() {
         });
     }
 }
-window.addEventListener('resize', checkScreenWidth);
-window.addEventListener('load', checkScreenWidth);
+
 checkScreenWidth();
 
 function checkScreenWidthForHide() {
@@ -42,8 +45,73 @@ function checkScreenWidthForHide() {
     }
 }
 
-window.addEventListener('resize', checkScreenWidthForHide);
 checkScreenWidthForHide();
+
+document.getElementById('nav-toggle').addEventListener('click', function () {
+    var navbar = document.getElementById('navbar');
+    var body = document.body;
+    var navButtons = document.getElementsByClassName('nav-button');
+    var upnav = document.getElementsByClassName('upnav');
+    var items = document.getElementsByClassName("list-items");
+
+    var isMobile = window.innerWidth < 1080;
+    var isTablet = window.innerWidth > 768 && window.innerWidth < 1080; 
+
+    if (navbar.classList.contains('expanded')) {
+        navbar.classList.remove('expanded');
+
+        if (!isMobile) {
+            body.classList.remove('navbar-expanded');
+        }
+
+        for (var i = 0; i < navButtons.length; i++) {
+            navButtons[i].style.backgroundColor = "#191923"; 
+        }
+
+        for (var j = 0; j < upnav.length; j++) {
+            upnav[j].style.width = "80%"; 
+        }
+
+        for (var k = 0; k < items.length; k++) {
+            items[k].style.display = "none";
+        }
+
+        if (isTablet) {
+            body.style.opacity = "1"; 
+        }
+    } else {
+        navbar.classList.add('expanded');
+
+        if (!isMobile) {
+            body.classList.add('navbar-expanded');
+        }
+
+        for (var i = 0; i < navButtons.length; i++) {
+            navButtons[i].style.backgroundColor = "#252531"; 
+        }
+
+        if (!isTablet) {
+            for (var j = 0; j < upnav.length; j++) {
+                upnav[j].style.width = "60%"; 
+            }
+        }
+
+        if (isTablet) {
+            for (var k = 0; k < items.length; k++) {
+                items[k].style.display = "flex";
+                items[k].style.alignItems = "center";
+            }
+        } else {
+            for (var k = 0; k < items.length; k++) {
+                items[k].style.display = "block";
+            }
+        }
+   
+        if (isTablet) {
+            body.style.opacity = "0.3"; 
+        }
+    }
+});
 
 let currIndex = {
     carousel1: 0,
@@ -194,71 +262,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.getElementById('nav-toggle').addEventListener('click', function () {
-    var navbar = document.getElementById('navbar');
-    var body = document.body;
-    var navButtons = document.getElementsByClassName('nav-button');
-    var upnav = document.getElementsByClassName('upnav');
-    var items = document.getElementsByClassName("list-items");
 
-    var isMobile = window.innerWidth < 1080;
-    var isTablet = window.innerWidth > 768 && window.innerWidth < 1080; 
-
-    if (navbar.classList.contains('expanded')) {
-        navbar.classList.remove('expanded');
-
-        if (!isMobile) {
-            body.classList.remove('navbar-expanded');
-        }
-
-        for (var i = 0; i < navButtons.length; i++) {
-            navButtons[i].style.backgroundColor = "#191923"; 
-        }
-
-        for (var j = 0; j < upnav.length; j++) {
-            upnav[j].style.width = "80%"; 
-        }
-
-        for (var k = 0; k < items.length; k++) {
-            items[k].style.display = "none";
-        }
-
-        if (isTablet) {
-            body.style.opacity = "1"; 
-        }
-    } else {
-        navbar.classList.add('expanded');
-
-        if (!isMobile) {
-            body.classList.add('navbar-expanded');
-        }
-
-        for (var i = 0; i < navButtons.length; i++) {
-            navButtons[i].style.backgroundColor = "#252531"; 
-        }
-
-        if (!isTablet) {
-            for (var j = 0; j < upnav.length; j++) {
-                upnav[j].style.width = "60%"; 
-            }
-        }
-
-        if (isTablet) {
-            for (var k = 0; k < items.length; k++) {
-                items[k].style.display = "flex";
-                items[k].style.alignItems = "center";
-            }
-        } else {
-            for (var k = 0; k < items.length; k++) {
-                items[k].style.display = "block";
-            }
-        }
-   
-        if (isTablet) {
-            body.style.opacity = "0.3"; 
-        }
-    }
-});
 
 
 document.addEventListener("DOMContentLoaded", function() {
