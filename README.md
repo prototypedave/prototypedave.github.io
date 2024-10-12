@@ -85,7 +85,7 @@ If you have any questions or suggestions, feel free to reach out to me:
 ---
 
 ## 🚀 **Live Demo**
-You can view the live version of this portfolio here: `[MyPortfolio](https://prototypedave.github.io)`
+You can view the live version of this portfolio here: `MyPortfolio(https://prototypedave.github.io)`
 
 ---
 ## 👏 **Thank you for visiting my portfolio!**
